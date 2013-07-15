@@ -6083,12 +6083,9 @@ class PysMod(object):
         None
 
         """
-        self.State()
-        assert self.__StateOK__ == True, '\n\nINFO: Invalid steady state run: mod.doState() and check for errors'
-        self.EvalEvar()
-        self.EvalEpar()
-        self.EvalCC()
-        self.EvalRC()
+        
+        self.doMcaRC()
+
         if self.__HAS_MOIETY_CONSERVATION__:
             self.EvalRCT()
         else:
